@@ -1,13 +1,13 @@
 import { defineComponent, onMounted } from 'vue'
 import * as d3 from 'd3'
-import { arrayData } from '../data'
+import { getSingleNumberArray } from '../utils'
 
 const Home = defineComponent({
   setup() {
     onMounted(() => {
       d3.select('#home')
         .selectAll('p')
-        .data(arrayData)
+        .data(getSingleNumberArray(30, 300, 10))
         .enter()
         .append('p')
         .text((d, i, arg) => {
