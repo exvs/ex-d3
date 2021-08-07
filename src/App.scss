@@ -11,5 +11,24 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
+    user-select: none;
+  }
+}
+
+div#ck {
+  padding: 20px 20px;
+  margin: 40px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: all 0.3s;
+  box-shadow: 20px 20px 0px #666666, -20px -20px 0px #ffffff;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+
+  &:active {
+    transform: scale(0.94);
   }
 }

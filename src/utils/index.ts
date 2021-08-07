@@ -41,4 +41,16 @@ const getDateNumberArray = (from: fromTo, to: fromTo, min: number, max: number, 
   return result
 }
 
-export { getSingleNumberArray, getDoubleNumberArray, getDateNumberArray }
+const getStringRange = (stop: number) => {
+  const result = []
+  for (let i = 0; i < stop; i++) result.push(i + '')
+  return result
+}
+
+export {
+  getSingleNumberArray,
+  getDoubleNumberArray,
+  getDateNumberArray,
+  getStringRange,
+  getFakerNumber
+}
