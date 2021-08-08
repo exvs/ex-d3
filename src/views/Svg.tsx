@@ -69,6 +69,7 @@ const Svg = defineComponent({
         .selectAll('rect')
         .data(dataset.value)
         .transition()
+        .delay((d, i) => i * 100)
         .duration(1000)
         .attr('x', (d, i) => xScale(i + '')!)
         .attr('y', d => height - yScale(d))
@@ -80,10 +81,20 @@ const Svg = defineComponent({
         .selectAll('text')
         .data(dataset.value)
         .transition()
+        .delay((d, i) => i * 100)
         .duration(1000)
+        .on('start', function () {
+          d3.select(this).attr('fill', 'white')
+        })
         .text(d => d)
         .attr('x', (d, i) => xScale(i + '')! + xScale.bandwidth() / 2)
         .attr('y', d => height - yScale(d) + 20)
+      // .transition()
+      // .duration(1000)
+      // .attr('fill', 'black')
+      // .on('end', function () {
+      //   d3.select(this).transition().duration(1000).attr('fill', 'black')
+      // })
     })
     onUnmounted(() => {
       d3.select('#app svg').remove()
