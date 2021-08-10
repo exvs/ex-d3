@@ -5,7 +5,7 @@ import './app.scss'
 const App = defineComponent({
   render: () => (
     <>
-      <div id='ck'>click to change dataset</div>
+      {/* <div id='ck'>click to change dataset</div> */}
       <RouterView />
     </>
   )
