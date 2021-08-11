@@ -1,0 +1,11 @@
+#css-transition-playground {
+  background-color: cornflowerblue;
+  height: 100px;
+  width: 100px;
+  transition: transform 1s steps(6), background-color 2s ease-out;
+
+  &:hover {
+    background-color: yellowgreen;
+    transform: translateX(30px);
+  }
+}
