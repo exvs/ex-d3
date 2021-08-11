@@ -3,7 +3,7 @@ import dataset from '../../data/weather'
 import * as d3 from 'd3'
 import { fuckUndefined, weather } from '../making-your-first-chart'
 
-export type dimention = {
+export type dimension = {
   width: number
   height: number
   margin: {
@@ -20,7 +20,7 @@ const xAccessor = (d: weather) => d.dewPoint
 const yAccessor = (d: weather) => d.humidity
 const colorAccessor = (d: weather) => d.cloudCover
 
-const scatterplot = defineComponent({
+const Scatterplot = defineComponent({
   setup() {
     onMounted(() => {
       /**
@@ -28,7 +28,7 @@ const scatterplot = defineComponent({
        */
       const width = d3.min([window.innerHeight * 0.9, window.innerWidth * 0.9])!
 
-      const dimensions: dimention = {
+      const dimensions: dimension = {
         width,
         height: width,
         margin: {
@@ -78,9 +78,9 @@ const scatterplot = defineComponent({
        */
       dots
         .join('circle')
-        .transition()
-        .delay((d, i) => i * 25)
-        .duration(1000)
+        // .transition()
+        // .delay((d, i) => i * 25)
+        // .duration(1000)
         .attr('cx', d => xScale(xAccessor(d)))
         .attr('cy', d => yScale(yAccessor(d)))
         .attr('r', 5)
@@ -119,5 +119,5 @@ const scatterplot = defineComponent({
   render: () => null
 })
 
-export { scatterplot }
-export default scatterplot
+export { Scatterplot }
+export default Scatterplot

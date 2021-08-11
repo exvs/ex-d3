@@ -73,7 +73,7 @@ const dimensions = {
 dimensions.boundedWidth = dimensions.width - dimensions.margin.left - dimensions.margin.right
 dimensions.boundedHeight = dimensions.height - dimensions.margin.top - dimensions.margin.bottom
 
-const makingYourFirstChart = defineComponent({
+const MakingYourFirstChart = defineComponent({
   setup() {
     const dataset = reactive<weather[]>(weatherData)
     onMounted(() => {
@@ -137,5 +137,5 @@ const makingYourFirstChart = defineComponent({
   render: () => null
 })
 
-export { makingYourFirstChart }
-export default makingYourFirstChart
+export { MakingYourFirstChart }
+export default MakingYourFirstChart
